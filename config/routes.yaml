@@ -1,3 +1,12 @@
-index:
-    path: /
-    controller: App\Controller\HomeController::index
+#index:
+#    path: /
+#    controller: App\Controller\HomeController::index
+#
+#secret:
+#    path: /secret/
+#    controller: App\Controller\SecretController::index
+#
+#secret-hash:
+#    path: /secret/{hash}
+#    controller: App\Controller\SecretController::index
+#
