@@ -23,7 +23,9 @@ class UnitOfWork
     protected $secretRepository;
     protected $em;
 
-    //inject EntityManagerInterface so it can be mocked in unit test
+    // it should use IOC container from services.yaml, but I want to try
+    // to make it work first and then it can be beautified later when all features works.
+    // https://symfony.com/doc/current/service_container.html#services-autowire
     function __construct(EntityManagerInterface $entityManager)
     {
         $this->em = $entityManager;
