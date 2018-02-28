@@ -4,41 +4,55 @@ namespace App\Controller;
 
 use App\Entity\Secret;
 use App\Helpers\GUID;
-use App\UnitOfWork\UnitOfWork;
-use App\ViewModels\SecretPostVM;
-use App\ViewModels\SecretVM;
+use App\Service\UnitOfWork;
+use App\Service\SecretPostVM;
+use App\Service\SecretVM;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\NoResultException;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SecretController extends Controller
 {
-    private $em;
     private $unitOfWork;
 
-    function __construct(EntityManagerInterface $em)
+    function __construct(UnitOfWork $unitOfWork)
     {
-        parent::__construct();
-
-        $this->em = $em;
-        $this->unitOfWork = new UnitOfWork($em);
+        $this->unitOfWork = $unitOfWork; // new UnitOfWork($this->getDoctrine()->getManager());
     }
 
     /**
      * @Route("/secret", name="secret", methods={"POST"})
      */
-    public function index(SecretPostVM $secretPostVM)
+    public function index(Request $request)
     {
+        $secretPostVM = new SecretPostVM($request);
+
+        if($secretPostVM->isValid() == false)
+        {
+            throw new BadRequestHttpException('Post values are not valid');
+        }
+
         // generated code
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: index(EntityManagerInterface $em)
         // $em = $this->getDoctrine()->getManager();
 
+        //$unitOfWork = new UnitOfWork($this->getDoctrine()->getManager());
+
+
+
+
+        //should work here
         $secret = $this->unitOfWork->saveSecretBySecretPostVM($secretPostVM);
 
         return new JsonResponse([
-            'message' => "Saved new secret with id: ".$secret->getId(),
-            'secret' => $secret
+            'message' => 'secret saved into database',
+            'secret' => new SecretVM($secret)
         ]);
 
 //        return $this->render('secret/index.html.twig', [
@@ -53,8 +67,19 @@ class SecretController extends Controller
      */
     public function getByHash(string $hash) : JsonResponse
     {
+        $secret = null;
+
+        try{
+            $secret = $this->unitOfWork->getSecretRepository()->findByHash($hash);
+        }catch (NoResultException $ex)
+        {
+            throw $this->createNotFoundException("No Secret was found with hash: $hash");
+        }
+
+
+        //$unitOfWork = new UnitOfWork($this->getDoctrine()->getManager());
         return new JsonResponse([
-           'secret' => new SecretVM($this->unitOfWork->getSecretRepository()->findByHash($hash))
+           'secret' => new SecretVM($secret)
         ]);
     }
 }

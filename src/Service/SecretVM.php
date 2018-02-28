@@ -6,7 +6,7 @@
  * Time: 10:27
  */
 
-namespace App\ViewModels;
+namespace App\Service;
 
 
 use App\Entity\Secret;

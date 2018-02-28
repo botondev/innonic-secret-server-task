@@ -6,11 +6,11 @@
  * Time: 15:31
  */
 
-namespace App\UnitOfWork;
+namespace App\Service;
 
 
+use App\Entity\Secret;
 use App\Repository\SecretRepository;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
@@ -26,10 +26,10 @@ class UnitOfWork
     // it should use IOC container from services.yaml, but I want to try
     // to make it work first and then it can be beautified later when all features works.
     // https://symfony.com/doc/current/service_container.html#services-autowire
-    function __construct(EntityManagerInterface $entityManager)
+    function __construct(EntityManagerInterface $entityManager, SecretRepository $secretRepository)
     {
         $this->em = $entityManager;
-        $this->secretRepository = new SecretRepository();
+        $this->secretRepository = $secretRepository;
     }
 
     public function getSecretRepository()
@@ -44,17 +44,15 @@ class UnitOfWork
 
     public function saveSecretBySecretPostVM(SecretPostVM $secretPostVM): Secret
     {
-        $em = $this->getDoctrine()->getManager();
         $secret = new Secret();
-        $secret->setCreatedAt(new DateTime('now'));
+        $secret->setCreatedAt(new \DateTime('now'));
         $secret->setSecretText($secretPostVM->secret);
         $secret->setRemainingViews($secretPostVM->expireAfterViews);
 
         if($secretPostVM->expireAfter != 0){
             //increment datetime now with given minutes
-            $expires = new \DateTime();
-            $interval = new \DateInterval();
-            $interval->i = $secretPostVM->expireAfter;
+            $expires = new \DateTime('now');
+            $interval = new \DateInterval('PT'.$secretPostVM->expireAfter.'M'); //Period (Time) int:minutes Minute
             $expires->add($interval);
             $secret->setExpiresAt($expires);
         }else{

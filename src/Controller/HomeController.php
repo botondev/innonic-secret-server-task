@@ -19,6 +19,7 @@ class HomeController
      */
     public function index()
     {
+        $testDebugValue = "test";
         return new Response("Home page");
     }
 }
