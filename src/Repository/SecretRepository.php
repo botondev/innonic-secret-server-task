@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Secret;
+use App\ViewModels\SecretPostVM;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -18,6 +19,21 @@ class SecretRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Secret::class);
     }
+
+    public function findByHash(string $hash): Secret
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.hash = :hash')->setParameter('hash', $hash)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult();
+    }
+
+//    public function findNext(int $start, int $count)
+//    {
+//        return $this->createQueryBuilder('s')
+//            ->s
+//    }
 
     /*
     public function findBySomething($value)

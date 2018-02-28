@@ -14,32 +14,33 @@ class Secret
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    public $id;
+    protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\GeneratedValue(strategy="UUID")
+     * @ORM\Column(type="string", unique = true)
      */
-    public $hash;
+    protected $hash;
 
     /**
      * @ORM\Column(type="string", name="secret_text")
      */
-    public $secretText;
+    protected $secretText;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    public $createdAt;
+    protected $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    public $expiresAt;
+    protected $expiresAt;
 
     /**
      * @ORM\Column(type="integer")
      */
-    public $remainingViews;
+    protected $remainingViews;
 
     /**
      * @return mixed
@@ -55,14 +56,6 @@ class Secret
     public function getHash()
     {
         return $this->hash;
-    }
-
-    /**
-     * @param mixed $hash
-     */
-    public function setHash($hash): void
-    {
-        $this->hash = $hash;
     }
 
     /**
