@@ -31,6 +31,35 @@ class SecretRepository extends ServiceEntityRepository
         return $result;
     }
 
+    public function findAvailableByHash(string $hash): Secret
+    {
+        $result = $this->createQueryBuilder('s')
+            ->where('s.hash = :hash')->setParameter('hash', $hash)
+            ->andWhere('s.remainingViews > 0')
+            ->andWhere('s.expiresAt is not null')
+            ->andWhere('s.expiresAt >= s.createdAt')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleResult();
+
+        return $result;
+    }
+
+    public function findAllAvailableHashes()
+    {
+        $fields = ['s.hash', 's.remainingViews'];
+
+        $result = $this->createQueryBuilder('s')
+            ->where('s.remainingViews > 0')
+            ->andWhere('s.expiresAt is not null')
+            ->andWhere('s.expiresAt >= s.createdAt')
+            ->select($fields)
+            ->getQuery()
+            ->execute();
+
+        return $result;
+    }
+
 
 //    public function findNext(int $start, int $count)
 //    {

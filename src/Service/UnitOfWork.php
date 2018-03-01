@@ -66,5 +66,25 @@ class UnitOfWork
         return $secret;
     }
 
+    public function updateSecret(Secret $secret): void
+    {
+        $this->em->persist($secret);
+        $this->em->flush();
+    }
+
+    public function countDownAndUpdateSecret(Secret $secret): Secret
+    {
+        if($secret->getRemainingViews() > 0)
+        {
+            $secret->setRemainingViews(
+                $secret->getRemainingViews() - 1
+            );
+
+            $this->updateSecret($secret);
+        }
+
+        return $secret;
+    }
+
 
 }

@@ -7,6 +7,7 @@ use App\Helpers\GUID;
 use App\Service\UnitOfWork;
 use App\Service\SecretPostVM;
 use App\Service\SecretVM;
+use Doctrine\DBAL\Exception\ServerException;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NoResultException;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,7 +27,7 @@ class SecretController extends Controller
     }
 
     /**
-     * @Route("/secret", name="secret", methods={"POST"})
+     * @Route("/secret/", name="secret", methods={"POST"})
      */
     public function index(Request $request)
     {
@@ -48,25 +49,36 @@ class SecretController extends Controller
     /**
      * @param string $hash
      * @Route("/secret/{hash}", name="get_secret_by_hash", methods={"GET"})
+     * @throws NotFoundHttpException
      * @return JsonResponse
      */
-    public function getByHash(string $hash) : JsonResponse
+    public function getAvailableByHash(string $hash) : JsonResponse
     {
         $secret = null;
 
-        try{
-            $secret = $this->unitOfWork->getSecretRepository()->findByHash($hash);
+        try
+        {
+            $secret = $this->unitOfWork->getSecretRepository()->findAvailableByHash($hash);
+            $secret = $this->unitOfWork->countDownAndUpdateSecret($secret);
         }catch (NoResultException $ex)
         {
             throw $this->createNotFoundException("No Secret was found with hash: $hash");
         }
 
-        //TODO: Check if secret expired
-        //TODO: Check if secret's remainingViews is > 0
-        //TODO: reduce remainingViews by 1
-
         return new JsonResponse([
            'secret' => new SecretVM($secret)
         ]);
+    }
+
+    /**
+     * This is for demoing the app easier. Originally this would be no part of the released app.
+     * @Route("/secret_hashes", name="secret_hash_list", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getAllAvailableHash() : JsonResponse
+    {
+        $hashes = $this->unitOfWork->getSecretRepository()->findAllAvailableHashes();
+
+        return new JsonResponse($hashes);
     }
 }
