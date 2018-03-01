@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b81546-a7c3-4845-9c4a-1ad1b14e1a05" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecretController.php" afterPath="$PROJECT_DIR$/src/Controller/SecretController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-grid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-grid.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/css/bootstrap.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.bundle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.bundle.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/html5reset-1.6.1.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/styles.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/.idea/innonic-secret-server-task.iml" afterPath="$PROJECT_DIR$/.idea/innonic-secret-server-task.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,98 +45,49 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5446039">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="SecretPostVM.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Service/SecretPostVM.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SecretVM.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Service/SecretVM.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SecretController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="572">
-                  <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#34#56#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="services.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/services.yaml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GUID.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Helpers/GUID.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+                <state relative-caret-position="306">
+                  <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="50" />
                   <folding>
                     <element signature="e#117#176#0#PHP" expanded="true" />
+                    <element signature="e#499#521#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.env">
+          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#12#26#0#Twig" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -156,6 +137,14 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -170,10 +159,14 @@
         <option value="$PROJECT_DIR$/src/UnitOfWork/UnitOfWork.php" />
         <option value="$PROJECT_DIR$/src/Repository/SecretRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Secret.php" />
-        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Service/UnitOfWork.php" />
         <option value="$PROJECT_DIR$/src/Service/SecretPostVM.php" />
         <option value="$PROJECT_DIR$/src/Controller/SecretController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
+        <option value="$PROJECT_DIR$/templates/home/index.html.twig.html" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
       </list>
     </option>
   </component>
@@ -281,6 +274,7 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid-doctrine" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -327,6 +321,25 @@
             <path>
               <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bootstrap-4.0.0-dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bootstrap-4.0.0-dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -340,12 +353,6 @@
               <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
@@ -367,6 +374,12 @@
             <path>
               <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="innonic-secret-server-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="innonic-secret-server-task" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="var" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -380,9 +393,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="C:/wamp64/tmp" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_git\innonic-secret-server-task\public" />
+      <recent name="C:\_git\innonic-secret-server-task\public\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\_git\innonic-secret-server-task\src\Service" />
     </key>
@@ -427,12 +446,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519736712759</updated>
       <workItem from="1519736718782" duration="9634000" />
-      <workItem from="1519758456622" duration="37001000" />
+      <workItem from="1519758456622" duration="41868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46635000" />
+    <option name="totallyTimeSpent" value="51502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -498,6 +517,7 @@
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
             <element signature="e#117#176#0#PHP" expanded="true" />
+            <element signature="e#499#521#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -566,16 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#117#176#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/UnitOfWork.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -589,7 +599,7 @@
     <entry file="file://$PROJECT_DIR$/src/Service/SecretPostVM.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -614,20 +624,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap-4.0.0-dist/js/bootstrap.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap-4.0.0-dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="74" column="17" lean-forward="false" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/SecretVM.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/html5reset-1.6.1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bootstrap-4.0.0-dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="e#117#176#0#PHP" expanded="true" />
+            <element signature="e#499#521#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>
