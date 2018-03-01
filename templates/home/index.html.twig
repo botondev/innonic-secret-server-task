@@ -4,5 +4,70 @@
 
 {% block body %}
 
-<h1>It will contain soon some links to forms that make use of our api</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Secret view box</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="form-check-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="jsSecretList" class="sr-only">List of available secrets</label>
+                            <select class="form-control" name="secret-list" id="jsSecretList">
+                                <option value="">Select a secret</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mb-2">Peek</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <small class="form-text text-muted">View counter will decrement after peek</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        Details will come here
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Add new secret</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/js/secretDemoApp/SecretDemoApp.js') }}"></script>
 {% endblock %}
