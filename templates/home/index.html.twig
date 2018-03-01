@@ -18,8 +18,18 @@
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="jsSecretList" class="sr-only">List of available secrets</label>
                             <select class="form-control" name="secret-list" id="jsSecretList">
-                                <option value="">Select a secret</option>
+                                <option value="">Select a secret hash</option>
                             </select>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mb-2">Peek</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="form-check-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="secretTextPeek" class="sr-only">Secret hash to peek at</label>
+                            <input type="text" class="form-control" id="secretTextPeek" placeholder="Or enter your hash">
                         </div>
 
                         <button type="button" class="btn btn-primary mb-2">Peek</button>
@@ -30,9 +40,43 @@
                         <small class="form-text text-muted">View counter will decrement after peek</small>
                     </div>
                 </div>
-                <div class="row">
+                <hr>
+                <div class="row card-header">
                     <div class="col-sm">
-                        Details will come here
+                        <h3>Selected Secret Details</h3>
+                        <form>
+                            <div class="form-group row">
+                                <label for="staticHash" class="col-sm-3 col-form-label">Hash</label>
+                                <div class="col-sm-9">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticHash" value="2bf1f257-f05c-4e82-b55e-74651049af51">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticSecretText" class="col-sm-3 col-form-label">Secret</label>
+                                <div class="col-sm-9">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticSecretText" value="I said I won't tell it!">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticCreatedAt" class="col-sm-3 col-form-label">Created At</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" readonly class="form-control-plaintext" id="staticCreatedAt" value="2018-03-01T22:36">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticExpiresAt" class="col-sm-3 col-form-label">Expires At</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" readonly class="form-control-plaintext" id="staticExpiresAt" value="2018-04-15T10:03">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticRemainingViews" class="col-sm-4 col-form-label">Remaining Views</label>
+                                <div class="col-sm-8">
+                                    <input type="number" readonly class="form-control-plaintext" id="staticRemainingViews" value="350">
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
 
@@ -41,6 +85,9 @@
                 <div class="row">
                     <div class="col-sm">
                         <h2>Add new secret</h2>
+                        <div class="alert-warning">
+                            <span>Some values are not right</span>
+                        </div>
                         <hr>
                     </div>
                 </div>
@@ -48,16 +95,33 @@
                     <div class="col-sm">
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="secretText">Secret text</label>
+                                <input type="text" class="form-control" id="secretText" placeholder="Enter secret text">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <label for="expireAfterViews">Expire after</label>
+                                <input type="number" min="1" class="form-control" id="expireAfterViews" placeholder="Enter amount of allowed views">
+                            </div>
+                            <div class="form-group">
+                                <label for="expireAfterMinutes">Expire after minutes</label>
+                                <input type="number" min="0" class="form-control" id="expireAfterMinutes" aria-describedby="expireAfterMinutesHelp" placeholder="Enter amount of minutes">
+                                <small id="expireAfterMinutesHelp" class="form-text text-muted">0 minutes means never expires.</small>
                             </div>
                             <button type="button" class="btn btn-primary">Submit</button>
                         </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="row dropdown-header">
+                    <div class="col-sm">
+                        <h3>Your created secrets</h3>
+
+                        {#Use #}
+                        {#$("ul").prepend("<li>ONE</li>");#}
+                        {#to populate this list#}
+                        <ul id="createdSecretHashList">
+                            <li data-container="">You didn't create any secret yet!</li>
+                        </ul>
                     </div>
                 </div>
             </div>
