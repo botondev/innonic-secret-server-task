@@ -37,27 +37,12 @@ class SecretController extends Controller
             throw new BadRequestHttpException('Post values are not valid');
         }
 
-        // generated code
-        // you can fetch the EntityManager via $this->getDoctrine()
-        // or you can add an argument to your action: index(EntityManagerInterface $em)
-        // $em = $this->getDoctrine()->getManager();
-
-        //$unitOfWork = new UnitOfWork($this->getDoctrine()->getManager());
-
-
-
-
-        //should work here
         $secret = $this->unitOfWork->saveSecretBySecretPostVM($secretPostVM);
 
         return new JsonResponse([
             'message' => 'secret saved into database',
             'secret' => new SecretVM($secret)
         ]);
-
-//        return $this->render('secret/index.html.twig', [
-//            'controller_name' => 'SecretController',
-//        ]);
     }
 
     /**
@@ -76,8 +61,10 @@ class SecretController extends Controller
             throw $this->createNotFoundException("No Secret was found with hash: $hash");
         }
 
+        //TODO: Check if secret expired
+        //TODO: Check if secret's remainingViews is > 0
+        //TODO: reduce remainingViews by 1
 
-        //$unitOfWork = new UnitOfWork($this->getDoctrine()->getManager());
         return new JsonResponse([
            'secret' => new SecretVM($secret)
         ]);
