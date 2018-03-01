@@ -27,7 +27,7 @@ class SecretController extends Controller
     }
 
     /**
-     * @Route("/secret/", name="secret", methods={"POST"})
+     * @Route("/secret", name="secret", methods={"POST"})
      */
     public function index(Request $request)
     {
