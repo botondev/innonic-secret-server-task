@@ -47,7 +47,7 @@ class SecretController extends Controller
 
     /**
      * @param string $hash
-     * @Route("/secret/{hash}", name="get_secret_by_hash")
+     * @Route("/secret/{hash}", name="get_secret_by_hash", methods={"GET"})
      * @return JsonResponse
      */
     public function getByHash(string $hash) : JsonResponse

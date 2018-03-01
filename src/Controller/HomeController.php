@@ -16,11 +16,14 @@ use Symfony\Component\HttpFoundation\Response;
 class HomeController extends AbstractController
 {
     /**
-     * @Route()ute("/", name="app_homepage")
+     * @Route("/", name="app_homepage")
      */
     public function index()
     {
         $testDebugValue = "test";
+        dump($testDebugValue, $this);
+        dump($testDebugValue);
+
         return $this->render('home/index.html.twig',[
             'title' => 'Home Page'
         ]);
