@@ -10,12 +10,16 @@ use App\Service\SecretVM;
 use Doctrine\DBAL\Exception\ServerException;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NoResultException;
+use http\Exception\BadMethodCallException;
+use http\Exception\InvalidArgumentException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 class SecretController extends Controller
 {
@@ -35,15 +39,13 @@ class SecretController extends Controller
 
         if($secretPostVM->isValid() == false)
         {
-            throw new BadRequestHttpException('Post values are not valid');
+            //throw new BadRequestHttpException('Post values are not valid');
+            throw new MethodNotAllowedHttpException([],'Post values are not valid');
         }
 
         $secret = $this->unitOfWork->saveSecretBySecretPostVM($secretPostVM);
 
-        return new JsonResponse([
-            'message' => 'secret saved into database',
-            'secret' => new SecretVM($secret)
-        ]);
+        return new JsonResponse(new SecretVM($secret));
     }
 
     /**

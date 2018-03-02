@@ -4,48 +4,21 @@
 (function(global){
 
    function SecretDemoApp(){
+
        //hook up the select list
-       this.secretListInitialised = false;
-        SecretDemoApp.services.http.getSecretHashes()
-            .done(function(secrets){
-                console.log("success->selectList: ", secrets);
-                this.secretListInitialised = true;
-
-                SecretDemoApp.ui.fillSelectList(secrets);
-                SecretDemoApp.ui.handlePeekFromList();
-                SecretDemoApp.ui.handlePeekFromText();
-            })
-            .fail(function(jqXHR, textStatus, errorThrown){
-                //show error message in first select option
-                //msg: "Out of service". Disable the select field and button.
-            });
-
-       //get reference to needed UI objects
-       //subscribe to click/submit events
-       $("#peekFromList").click(function(){
-
-       });
-       $("#peekFromText").click(function(){
-
-       });
-
-       $("#submitSecret").click(function(){
-
-       });
-            //manage data flow
-            //manage UI change
-
-       //fill up the hash select-list
-       //handle "form post" event on both peek button
-
-       //manage add new "submit" button
+       SecretDemoApp.ui.prepareSecretList();
+       SecretDemoApp.ui.handlePeekFromText();
+       SecretDemoApp.ui.handleSubmitSecret();
 
    }
 
     SecretDemoApp.ui = {
         fillSelectList: function(secrets){
             var $select = $("#secretList");
-
+            $select.empty().append($("<option>",{
+                value: "",
+                text: "Select a secret hash"
+            }));
             for(var i in secrets){
                 console.log(secrets[i]);
                 $select.append($("<option>",{
@@ -53,6 +26,52 @@
                     text: secrets[i].hash + " ("+secrets[i].remainingViews+")"
                 }))
             }
+        },
+        prepareSecretList: function(){
+            SecretDemoApp.services.http.getSecretHashes()
+                .done(function(secrets){
+                    console.log("success->selectList: ", secrets);
+
+                    SecretDemoApp.ui.fillSelectList(secrets);
+                    SecretDemoApp.ui.handlePeekFromList();
+                })
+                .fail(function(jqXHR, textStatus, errorThrown){
+                    //TODO: show error message in first select option on fail
+                    //msg: "Out of service". Disable the select field and button.
+                });
+        },
+        handleSubmitSecret: function(){
+            $("#submitSecret").click(function(){
+                //build secret
+                var secretPostVM = new SecretDemoApp.models.SecretPostVM();
+                secretPostVM.secret = $("#secretText").val();
+                secretPostVM.expireAfter = $("#expireAfterMinutes").val();
+                secretPostVM.expireAfterViews = $("#expireAfterViews").val();
+
+                //post secret
+                SecretDemoApp.services.http.postSecret(secretPostVM)
+                    .done(function(newSecret){
+                        SecretDemoApp.ui.clearSecretPostForm();
+                        SecretDemoApp.ui.displaySecret(newSecret);
+                        $("#secretPostFormError").hide();
+                        SecretDemoApp.ui.prepareSecretList(); //reset/update list
+                    })
+                    .fail(function(){
+                        $("#secretPostFormError").show();
+
+                        //NOTE: bad practice: copy pasted code
+                        // breaking DO NOT REPEAT YOURSELF principle
+                        // should be in its separate function
+                        $("#selectedSecretDetailsBox").hide();
+                    });
+            });
+        },
+        clearSecretPostForm: function(){
+            var secretPostVM = new SecretDemoApp.models.SecretPostVM();
+            $("#secretText").val(secretPostVM.secret);
+            $("#expireAfterMinutes").val(secretPostVM.expireAfter);
+            $("#expireAfterViews").val(secretPostVM.expireAfterViews);
+
         },
         handlePeekFromList: function(){
             $("#peekFromList").click(function(){
@@ -75,7 +94,7 @@
                 if(hash){
                     SecretDemoApp.ui.displaySecretByHash(hash);
                 }else{
-                    alert("No secret hsh was typed");
+                    alert("No secret hash was typed");
                 }
 
             });
@@ -86,7 +105,6 @@
                .done(function(data){
                    console.log("We got the full  secret:", data);
                    SecretDemoApp.ui.displaySecret(data);
-                   $("#selectedSecretDetailsBox").show();
                })
                .fail(function(jqXHR, textStatus, errorThrown){
                    alert(textStatus + ": " + errorThrown);
@@ -95,11 +113,18 @@
        },
         displaySecret: function(secret){
 
-            $("#staticHash").val(secret.hash);
+            //Note: bad practice: multiple responsibility
+            // this functions breaking the SINGLE RESPONSIBILITY PRINCIPLE
+            // because firstly it handles filling the form
+            // secondly it is responsible for "show"ing the content
+
+            $("#staticHash").val(secret.hash.toLocaleString());
             $("#staticSecretText").val(secret.secretText);
             $("#staticCreatedAt").val(secret.createdAt.date);
-            $("#staticExpiresAt").val(secret.expiresAt.date);
+            $("#staticExpiresAt").val(secret.expiresAt != null ? secret.expiresAt.date : null);
             $("#staticRemainingViews").val(secret.remainingViews);
+
+            $("#selectedSecretDetailsBox").show();
         }
     };
 
@@ -123,14 +148,14 @@
        /**
         * @description A ViewModel to support Secret object creation on http POST
         * @property {string} secret This text will be saved as a secret
-        * @property {int} expiresAfter The secret won’t be available after the given time. The value is provided in minutes. 0 means never expires
-        * @property {int} expiresAfterViews The secret won’t be available after the given number of views. It must be greater than 0.
+        * @property {int} expireAfter The secret won’t be available after the given time. The value is provided in minutes. 0 means never expires
+        * @property {int} expireAfterViews The secret won’t be available after the given number of views. It must be greater than 0.
         * @constructor
         */
        SecretPostVM: function(){
            this.secret = "";
-           this.expiresAfter = 0;
-           this.expiresAfterViews = 1;
+           this.expireAfter = 0;
+           this.expireAfterViews = 1;
 
            //TODO: Validation logic could come here for SecretPostVM
        }

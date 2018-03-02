@@ -4,6 +4,7 @@
     <list default="true" id="48b81546-a7c3-4845-9c4a-1ad1b14e1a05" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js" afterPath="$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecretController.php" afterPath="$PROJECT_DIR$/src/Controller/SecretController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SecretRepository.php" afterPath="$PROJECT_DIR$/src/Repository/SecretRepository.php" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,13 +35,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
-                  <caret line="43" column="95" lean-forward="false" selection-start-line="43" selection-start-column="95" selection-end-line="43" selection-end-column="95" />
+                <state relative-caret-position="356">
+                  <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
                   <folding>
                     <element signature="e#1927#1948#0#HTML" expanded="true" />
+                    <element signature="e#4627#4648#0#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -56,11 +58,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SecretController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SecretController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="67" column="53" lean-forward="false" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+                <state relative-caret-position="96">
+                  <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -81,8 +83,8 @@
           <file leaf-file-name="SecretPostVM.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Service/SecretPostVM.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="445">
-                  <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+                <state relative-caret-position="303">
+                  <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -92,11 +94,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SecretDemoApp.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SecretDemoApp.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+                <state relative-caret-position="405">
+                  <caret line="113" column="40" lean-forward="false" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -105,7 +107,7 @@
           <file leaf-file-name="UnitOfWork.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Service/UnitOfWork.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="881">
+                <state relative-caret-position="932">
                   <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
                   <folding>
                     <element signature="e#114#136#0#PHP" expanded="true" />
@@ -114,14 +116,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SecretRepository.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SecretRepository.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Repository/SecretRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="181">
-                  <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+                <state relative-caret-position="725">
+                  <caret line="76" column="14" lean-forward="false" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
                   <folding>
                     <element signature="e#34#56#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SecretVM.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Service/SecretVM.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -143,6 +155,8 @@
     <findStrings>
       <find>submit</find>
       <find>selec</find>
+      <find>add new</find>
+      <find>your</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,11 +178,11 @@
         <option value="$PROJECT_DIR$/src/Entity/Secret.php" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Service/UnitOfWork.php" />
-        <option value="$PROJECT_DIR$/src/Repository/SecretRepository.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/SecretController.php" />
-        <option value="$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js" />
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js" />
+        <option value="$PROJECT_DIR$/src/Repository/SecretRepository.php" />
       </list>
     </option>
   </component>
@@ -469,12 +483,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519736712759</updated>
       <workItem from="1519736718782" duration="9634000" />
-      <workItem from="1519758456622" duration="71835000" />
+      <workItem from="1519758456622" duration="78970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81469000" />
+    <option name="totallyTimeSpent" value="88604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -513,15 +527,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/SecretController.php</url>
-          <line>32</line>
+          <line>36</line>
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Repository/SecretRepository.php</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -625,14 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/SecretVM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -689,56 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/UnitOfWork.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding>
-            <element signature="e#114#136#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SecretRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Secret.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/SecretPostVM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="67" column="53" lean-forward="false" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -754,21 +715,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/SecretPostVM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="43" column="95" lean-forward="false" selection-start-line="43" selection-start-column="95" selection-end-line="43" selection-end-column="95" />
+        <state relative-caret-position="356">
+          <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
           <folding>
             <element signature="e#1927#1948#0#HTML" expanded="true" />
+            <element signature="e#4627#4648#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/secretDemoApp/SecretDemoApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+        <state relative-caret-position="405">
+          <caret line="113" column="40" lean-forward="false" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/SecretVM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Secret.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/UnitOfWork.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="932">
+          <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+          <folding>
+            <element signature="e#114#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecretController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/SecretRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="76" column="14" lean-forward="false" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

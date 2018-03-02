@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Secret;
 use App\Service\SecretPostVM;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NoResultException;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -36,18 +37,24 @@ class SecretRepository extends ServiceEntityRepository
         $result = $this->createQueryBuilder('s')
             ->where('s.hash = :hash')->setParameter('hash', $hash)
             ->andWhere('s.remainingViews > 0')
-            ->andWhere('s.expiresAt is not null')
-            ->andWhere('s.expiresAt >= s.createdAt')
+            //->andWhere('s.expiresAt >= :now')->setParameter('now', new \DateTime('now'))
             ->setMaxResults(1)
             ->getQuery()
             ->getSingleResult();
+
+        if($result){
+            if($result->getExpiresAt() < new \DateTime('now')){
+                //$result = null;
+                throw new NoResultException();
+            }
+        }
 
         return $result;
     }
 
     public function findAllAvailableHashes()
     {
-        $fields = ['s.hash', 's.remainingViews'];
+        $fields = ['s.hash', 's.remainingViews', 's.expiresAt'];
 
         $result = $this->createQueryBuilder('s')
             ->where('s.remainingViews > 0')
@@ -55,9 +62,24 @@ class SecretRepository extends ServiceEntityRepository
             ->andWhere('s.expiresAt >= s.createdAt')
             ->select($fields)
             ->getQuery()
-            ->execute();
+            ->getResult();
+            //->execute();
 
-        return $result;
+//        var_dump($result);
+//        die();
+
+
+        //quick hack for lacking date support in doctrine
+        $finalResult = [];
+        for($i = 0; $i < count($result); $i++)
+        {
+            //$result[$i]->getExpiresAt()
+            if($result[$i]['expiresAt'] >= new \DateTime('now')){
+                array_push($finalResult, $result[$i]);
+            }
+        }
+
+        return $finalResult;
     }
 
 
