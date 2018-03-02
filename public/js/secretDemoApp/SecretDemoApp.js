@@ -4,8 +4,34 @@
 (function(global){
 
    function SecretDemoApp(){
+       //hook up the select list
+       this.secretListInitialised = false;
+        SecretDemoApp.services.http.getSecretHashes()
+            .done(function(secrets){
+                console.log("success->selectList: ", secrets);
+                this.secretListInitialised = true;
+
+                SecretDemoApp.ui.fillSelectList(secrets);
+                SecretDemoApp.ui.handlePeekFromList();
+                SecretDemoApp.ui.handlePeekFromText();
+            })
+            .fail(function(jqXHR, textStatus, errorThrown){
+                //show error message in first select option
+                //msg: "Out of service". Disable the select field and button.
+            });
+
        //get reference to needed UI objects
        //subscribe to click/submit events
+       $("#peekFromList").click(function(){
+
+       });
+       $("#peekFromText").click(function(){
+
+       });
+
+       $("#submitSecret").click(function(){
+
+       });
             //manage data flow
             //manage UI change
 
@@ -16,6 +42,66 @@
 
    }
 
+    SecretDemoApp.ui = {
+        fillSelectList: function(secrets){
+            var $select = $("#secretList");
+
+            for(var i in secrets){
+                console.log(secrets[i]);
+                $select.append($("<option>",{
+                    value: secrets[i].hash,
+                    text: secrets[i].hash + " ("+secrets[i].remainingViews+")"
+                }))
+            }
+        },
+        handlePeekFromList: function(){
+            $("#peekFromList").click(function(){
+                var $select = $("#secretList");
+
+                var hash = $select.val();
+                if(hash){
+                    SecretDemoApp.ui.displaySecretByHash(hash);
+                }else{
+                    alert("No secret was selected");
+                }
+
+            });
+        },
+        handlePeekFromText: function(){
+            $("#peekFromText").click(function(){
+                var $text = $("#secretTextPeek");
+
+                var hash = $text.val();
+                if(hash){
+                    SecretDemoApp.ui.displaySecretByHash(hash);
+                }else{
+                    alert("No secret hsh was typed");
+                }
+
+            });
+        },
+       displaySecretByHash: function(hash){
+           //get secret
+           SecretDemoApp.services.http.getSecret(hash)
+               .done(function(data){
+                   console.log("We got the full  secret:", data);
+                   SecretDemoApp.ui.displaySecret(data);
+                   $("#selectedSecretDetailsBox").show();
+               })
+               .fail(function(jqXHR, textStatus, errorThrown){
+                   alert(textStatus + ": " + errorThrown);
+                   $("#selectedSecretDetailsBox").hide();
+               });
+       },
+        displaySecret: function(secret){
+
+            $("#staticHash").val(secret.hash);
+            $("#staticSecretText").val(secret.secretText);
+            $("#staticCreatedAt").val(secret.createdAt.date);
+            $("#staticExpiresAt").val(secret.expiresAt.date);
+            $("#staticRemainingViews").val(secret.remainingViews);
+        }
+    };
 
    SecretDemoApp.models = {
        //TODO: add a descriptive JS Doc for Secret model
@@ -29,6 +115,8 @@
            this.createdAt = null;
            this.expiresAt = null;
            this.remainingViews = null;
+
+           //TODO: We could use a Factory to "mimic" multiple constructor behaviour
 
            //TODO: Add validation logic for Secret object
        },
@@ -49,6 +137,9 @@
    };
 
    SecretDemoApp.services = {
+       /**
+        * All http service returns a promise we can reuse when the http call is done.
+        */
        http: {
            getSecret : function(hash){
                return $.ajax({

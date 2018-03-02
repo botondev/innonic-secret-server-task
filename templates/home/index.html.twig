@@ -16,13 +16,13 @@
                 <div class="row">
                     <form class="form-check-inline">
                         <div class="form-group mx-sm-3 mb-2">
-                            <label for="jsSecretList" class="sr-only">List of available secrets</label>
-                            <select class="form-control" name="secret-list" id="jsSecretList">
+                            <label for="secretList" class="sr-only">List of available secrets</label>
+                            <select class="form-control" name="secret-list" id="secretList">
                                 <option value="">Select a secret hash</option>
                             </select>
                         </div>
 
-                        <button type="button" class="btn btn-primary mb-2">Peek</button>
+                        <button type="button" id="peekFromList" class="btn btn-primary mb-2">Peek</button>
                     </form>
                 </div>
                 <div class="row">
@@ -32,7 +32,7 @@
                             <input type="text" class="form-control" id="secretTextPeek" placeholder="Or enter your hash">
                         </div>
 
-                        <button type="button" class="btn btn-primary mb-2">Peek</button>
+                        <button type="button" id="peekFromText" class="btn btn-primary mb-2">Peek</button>
                     </form>
                 </div>
                 <div class="row">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row card-header">
+                <div id="selectedSecretDetailsBox" class="row card-header" style="display: none">
                     <div class="col-sm">
                         <h3>Selected Secret Details</h3>
                         <form>
@@ -60,13 +60,13 @@
                             <div class="form-group row">
                                 <label for="staticCreatedAt" class="col-sm-3 col-form-label">Created At</label>
                                 <div class="col-sm-9">
-                                    <input type="datetime-local" readonly class="form-control-plaintext" id="staticCreatedAt" value="2018-03-01T22:36">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticCreatedAt" value="2018-03-01 22:36">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="staticExpiresAt" class="col-sm-3 col-form-label">Expires At</label>
                                 <div class="col-sm-9">
-                                    <input type="datetime-local" readonly class="form-control-plaintext" id="staticExpiresAt" value="2018-04-15T10:03">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticExpiresAt" value="2018-04-15 10:03">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -107,7 +107,7 @@
                                 <input type="number" min="0" class="form-control" id="expireAfterMinutes" aria-describedby="expireAfterMinutesHelp" placeholder="Enter amount of minutes">
                                 <small id="expireAfterMinutesHelp" class="form-text text-muted">0 minutes means never expires.</small>
                             </div>
-                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button type="button" id="submitSecret" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

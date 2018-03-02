@@ -65,9 +65,7 @@ class SecretController extends Controller
             throw $this->createNotFoundException("No Secret was found with hash: $hash");
         }
 
-        return new JsonResponse([
-           'secret' => new SecretVM($secret)
-        ]);
+        return new JsonResponse(new SecretVM($secret));
     }
 
     /**
