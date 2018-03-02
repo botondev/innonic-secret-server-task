@@ -42,7 +42,7 @@ class SecretRepository extends ServiceEntityRepository
             ->getQuery()
             ->getSingleResult();
 
-        if($result){
+        if($result && $result->getExpiresAt() != null){
             if($result->getExpiresAt() < new \DateTime('now')){
                 //$result = null;
                 throw new NoResultException();
@@ -58,8 +58,8 @@ class SecretRepository extends ServiceEntityRepository
 
         $result = $this->createQueryBuilder('s')
             ->where('s.remainingViews > 0')
-            ->andWhere('s.expiresAt is not null')
-            ->andWhere('s.expiresAt >= s.createdAt')
+            ->andWhere('s.expiresAt is null OR s.expiresAt >= s.createdAt')
+            //->orWhere('s.expiresAt >= s.createdAt')
             ->select($fields)
             ->getQuery()
             ->getResult();
@@ -74,7 +74,8 @@ class SecretRepository extends ServiceEntityRepository
         for($i = 0; $i < count($result); $i++)
         {
             //$result[$i]->getExpiresAt()
-            if($result[$i]['expiresAt'] >= new \DateTime('now')){
+            if($result[$i]['expiresAt'] == null ||
+                $result[$i]['expiresAt'] >= new \DateTime('now')){
                 array_push($finalResult, $result[$i]);
             }
         }

@@ -6,7 +6,7 @@
    function SecretDemoApp(){
 
        //hook up the select list
-       SecretDemoApp.ui.prepareSecretList();
+       SecretDemoApp.ui.prepareSecretList(/*isInit = */ true);
        SecretDemoApp.ui.handlePeekFromText();
        SecretDemoApp.ui.handleSubmitSecret();
 
@@ -27,13 +27,21 @@
                 }))
             }
         },
-        prepareSecretList: function(){
+
+        /**
+         *
+         * @param {boolean} isInit Wires events
+         */
+        prepareSecretList: function(isInit){
             SecretDemoApp.services.http.getSecretHashes()
                 .done(function(secrets){
                     console.log("success->selectList: ", secrets);
 
                     SecretDemoApp.ui.fillSelectList(secrets);
-                    SecretDemoApp.ui.handlePeekFromList();
+                    if(isInit){
+                        SecretDemoApp.ui.handlePeekFromList();
+                    }
+
                 })
                 .fail(function(jqXHR, textStatus, errorThrown){
                     //TODO: show error message in first select option on fail
@@ -54,7 +62,8 @@
                         SecretDemoApp.ui.clearSecretPostForm();
                         SecretDemoApp.ui.displaySecret(newSecret);
                         $("#secretPostFormError").hide();
-                        SecretDemoApp.ui.prepareSecretList(); //reset/update list
+
+                        SecretDemoApp.ui.prepareSecretList(/*isInit = */ false); //reset/update list
                     })
                     .fail(function(){
                         $("#secretPostFormError").show();
