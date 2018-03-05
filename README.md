@@ -5,3 +5,10 @@
 
 doctrine commands  
 https://symfony.com/doc/current/doctrine.html  
+
+composer  
+https://getcomposer.org/  
+
+symfony recipes  
+https://symfony.sh/  
+
